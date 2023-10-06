@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/facebook.css' rel='stylesheet'>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/phone.css' rel='stylesheet'>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/instagram.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <title>Trang cá nhân </title>
+    <link  rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header"> 
+        <div class="letter" style="margin-bottom: 7px;font-family: 'Roboto Slab', serif;font-size: 40px;">PORTFOLIO</div>
+       
+        <div class="symbol">
+            <button onclick="changeBackgroundColor()">Change Color</button>
+          <div class="edit">  <i class="gg-instagram"></i>
+            <i class="gg-facebook"></i>
+            <i class="gg-phone"></i>
+        </div>
+        </div>
+    </div>
+    <div class="content">
+        <img src="cavat.jpg" onclick = "changeImage()" id="img" >
+        <div style=" margin: auto;">
+            <div style="font-size: 80px;font-weight: 600; word-spacing: 0px;font-family: 'Play', sans-serif;">TRẦN GIA HẠO</div>
+            <pre style="font-size: 30px;"><b><i>"I believe that no matters where we start,
+the posibilty of our successions depends
+on our patience and perseverance."</i></b></pre>
+
+            <a href="#person"><button class="custom-btn btn-2" >CONTACT ME</button></a>
+        </div>
+    </div>
+    <div class="footer" id="person">
+        <div class="zalo"><img src="Zalo.jpg" class="zalo-img"> </div>
+        <div class="personal">
+            <div style="padding-bottom:20px ;margin-top: 20px ;font-family: 'Russo One', sans-serif;font-size: 20px; opacity: 0.7;">FOLLOW ME</div>
+            <div style=" font-size: 25px;font-family: 'Russo One', sans-serif; text-decoration: underline; margin-left: 20px">
+                <div><a class="contact" href="https://www.facebook.com/hao.tran.2912" target="_blank">FACEBOOK &#8599</a></div>
+                <div style="margin-top:10px;"><a class="contact" href="https://www.instagram.com/hao.tran.545/" target="_blank">INSTAGRAM &#8599</a></div>
+                <div style="margin-top:10px; padding-bottom:20px"><a class="contact" href="https://www.tiktok.com/@hao...tran" target="_blank">TIKTOK &#8599</a></div>
+            </div>
+           <div onclick="callPhoneNumber()"> <div class="phone" ><i class="gg-phone" style="margin-top:3px;" ></i> </div></div>
+        </div>
+    </div>
+
+    
+    
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling effect
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+
+        function changeBackgroundColor() {
+        var body = document.querySelector('body');
+        body.style.backgroundColor = getRandomColor();
+    }
+
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+    function callPhoneNumber() {
+        var phoneNumber = "0775586522";
+        window.location.href = "tel:" + phoneNumber;
+    }
+
+
+function changeImage() {
+    var img = document.getElementById('img');
+
+    if (img.src.match("cavat.jpg")) {
+        img.src = "vest.jpg";
+    } else {
+        img.src = "cavat.jpg"; 
+    }
+}
+
+    </script>
+    
+</body>
+</html>
